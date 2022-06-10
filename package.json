@@ -1,0 +1,37 @@
+{
+  "name": "edc-storage",
+  "version": "0.0.1",
+  "description": "A tool to enhance the use of storage (localstorage & sessionStorage)",
+  "main": "dist/bundle.umd.js",
+  "module": "dist/bundle.esm.js",
+  "unpkg":"dist/bundle.umd.js",
+  "jsdelivr":"dist/bundle.umd.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm-run-all clean --parallel build:umd build:esm",
+    "build:umd": "rollup src/index.js -o dist/bundle.umd.js -f umd -n edcStorage -p rollup-plugin-node-resolve",
+    "build:esm": "rollup src/index.js -o dist/bundle.esm.js -f esm -p rollup-plugin-node-resolve"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "storage",
+    "localstorage",
+    "sessionStorage"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KeyToLove/edc-storage"
+  },
+  "author": "KeyToLove<coderEDC@163.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.75.6",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
+}
